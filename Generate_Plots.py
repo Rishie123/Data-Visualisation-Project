@@ -14,28 +14,9 @@ import pandas as pd
 # In[2]:
 
 
-# Write the article
-with open('reforms_article_top3.txt', 'w') as f:
-    f.write("# Distribution of Reforms by Asian Countries (Treemap)\n\n")
-    f.write("In an era defined by rapid globalization and dynamic economic shifts, Asian countries have emerged as key players in shaping the future landscape of reforms. Analyzing the distribution of reforms across these nations provides valuable insights into their policy priorities and socio-economic trajectories.\n\n")
-    f.write("## Understanding the Data\n\n")
-    f.write("The data utilized for this analysis is sourced from a comprehensive dataset encompassing a wide array of reforms across various sectors. Specifically focusing on Asian countries, the dataset highlights the reform initiatives undertaken by nations such as Afghanistan, China, India, Japan, and others.\n\n")
-    f.write("## Unveiling the Patterns\n\n")
-    f.write("Upon aggregating and processing the data, a compelling visualization in the form of a treemap emerges. Each rectangle within the treemap represents a specific country, with its size proportional to the number of reforms enacted. The color palette employed further accentuates the visual hierarchy, aiding in the identification of prominent contributors to the reform landscape.\n\n")
-    f.write("## Key Insights\n\n")
-    f.write("- **Diverse Landscape**: The treemap underscores the diversity of reform efforts across Asian countries. From economic policy reforms to social initiatives, each nation exhibits a unique set of priorities tailored to its developmental agenda.\n\n")
-    f.write("- **Regional Dynamics**: While certain countries stand out as leaders in reform implementation, the visualization also sheds light on regional disparities. The distribution of reforms unveils patterns of collaboration and competition, reflecting broader geopolitical dynamics within the region.\n\n")
-    f.write("- **Policy Implications**: By dissecting the reform landscape, policymakers and analysts gain valuable insights into the efficacy and impact of various policy interventions. Identifying successful reform models can inform evidence-based decision-making and facilitate cross-country learning.\n\n")
-    f.write("## Future Directions\n\n")
-    f.write("As Asian countries continue to navigate the complexities of global integration and domestic development, understanding the evolving landscape of reforms remains paramount. Leveraging data-driven approaches and collaborative frameworks can pave the way for inclusive and sustainable growth in the region.\n\n")
-    f.write("## Conclusion\n\n")
-    f.write("The treemap visualization serves as a powerful tool for dissecting the distribution of reforms across Asian countries. Beyond its aesthetic appeal, the visualization encapsulates a wealth of information, offering stakeholders a nuanced understanding of policy dynamics and reform trajectories. By harnessing such insights, policymakers can chart a course towards a more prosperous and equitable future for all.\n")
 
-print("Article saved as 'reforms_article.txt' and plot saved as 'reforms_treemap.svg'.")
 
-#importing the data
-
-data = pd.read_excel('werd_v2.xlsx')
+data = pd.read_excel('dataset.xlsx')
 
 # Define lists of countries for each region
 asia_countries = ['Afghanistan', 'Armenia', 'Azerbaijan', 'Bahrain', 'Bangladesh', 'Bhutan', 'Brunei', 'Cambodia', 'China', 'Cyprus', 'Georgia', 'India', 'Indonesia', 'Iran', 'Iraq', 'Israel', 'Japan', 'Jordan', 'Kazakhstan', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Lebanon', 'Malaysia', 'Maldives', 'Mongolia', 'Myanmar', 'Nepal', 'North Korea', 'Oman', 'Pakistan', 'Palestine', 'Philippines', 'Qatar', 'Saudi Arabia', 'Singapore', 'South Korea', 'Sri Lanka', 'Syria', 'Tajikistan', 'Thailand', 'Timor-Leste', 'Turkey', 'Turkmenistan', 'United Arab Emirates', 'Uzbekistan', 'Vietnam', 'Yemen']
