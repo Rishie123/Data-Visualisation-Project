@@ -1,29 +1,24 @@
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import matplotlib.patches as patches
 
-
-# importing the data
-data = pd.read_excel('Dataset.xlsx')
+# Importing the data
+data = pd.read_csv('Dataset.csv')
 
 # Define lists of countries for each region
 asia_countries = ['Afghanistan', 'Armenia', 'Azerbaijan', 'Bahrain', 'Bangladesh', 'Bhutan', 'Brunei', 'Cambodia', 'China', 'Cyprus', 'Georgia', 'India', 'Indonesia', 'Iran', 'Iraq', 'Israel', 'Japan', 'Jordan', 'Kazakhstan', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Lebanon', 'Malaysia', 'Maldives', 'Mongolia', 'Myanmar', 'Nepal', 'North Korea', 'Oman', 'Pakistan', 'Palestine', 'Philippines', 'Qatar', 'Saudi Arabia', 'Singapore', 'South Korea', 'Sri Lanka', 'Syria', 'Tajikistan', 'Thailand', 'Timor-Leste', 'Turkey', 'Turkmenistan', 'United Arab Emirates', 'Uzbekistan', 'Vietnam', 'Yemen']
-# north_america_countries = ['Canada', 'United States']  # Removing North America
 south_america_countries = ['Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia', 'Ecuador', 'Guyana', 'Paraguay', 'Peru', 'Suriname', 'Uruguay', 'Venezuela']
 europe_countries = ['Albania', 'Andorra', 'Austria', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria', 'Croatia', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Kosovo', 'Latvia', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Malta', 'Moldova', 'Monaco', 'Montenegro', 'Netherlands', 'North Macedonia', 'Norway', 'Poland', 'Portugal', 'Romania', 'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Ukraine', 'United Kingdom', 'Vatican City']
 australia_countries = ['Australia', 'Fiji', 'Kiribati', 'Marshall Islands', 'Micronesia', 'Nauru', 'New Zealand', 'Palau', 'Papua New Guinea', 'Samoa', 'Solomon Islands', 'Tonga', 'Tuvalu', 'Vanuatu']
 
 # Filter data for each region
 data_asia = data[data['country_name'].isin(asia_countries)]
-# data_north_america = data[data['country_name'].isin(north_america_countries)]  # Removing North America
 data_south_america = data[data['country_name'].isin(south_america_countries)]
 data_europe = data[data['country_name'].isin(europe_countries)]
 data_australia = data[data['country_name'].isin(australia_countries)]
 
 # Calculate the number of reforms for each region
 reforms_asia = data_asia.groupby('country_name').size().nlargest(2)
-# reforms_north_america = data_north_america.groupby('country_name').size().nlargest(2)  # Removing North America
 reforms_south_america = data_south_america.groupby('country_name').size().nlargest(2)
 reforms_europe = data_europe.groupby('country_name').size().nlargest(2)
 reforms_australia = data_australia.groupby('country_name').size().nlargest(2)
@@ -31,7 +26,6 @@ reforms_australia = data_australia.groupby('country_name').size().nlargest(2)
 # Create a DataFrame for the stacked bar chart
 df = pd.DataFrame({
     'Asia': reforms_asia,
-    # 'North America': reforms_north_america,  # Removing North America
     'South America': reforms_south_america,
     'Europe': reforms_europe,
     'Australia': reforms_australia
@@ -46,8 +40,7 @@ colors = ['#0c5193', '#0fb1c6', '#d6ad42']
 # Plotting
 font = {'fontname': 'Econ Sans'}
 
-plt.figure(figsize=(11, 6))  # 332 points by 198 points
-
+# No need to create a new figure here, just plot directly
 ax = df.T.plot(kind='bar', stacked=True, figsize=(11, 6), color=colors)
 ax.set_xlabel('Region', **font, fontsize=12, fontweight='bold')
 ax.set_ylabel('Number of Reforms', **font, fontsize=12, fontweight='bold')
@@ -64,21 +57,12 @@ ax.text(0.56, 0.96, 'Top 2 - no. of Education Reforms ', ha='right',fontdict=fon
 
 # Adjust legend to be more informative
 ax.legend(title='Top 2 by no. of Education Reforms', bbox_to_anchor=(1, 1), fontsize=10)
+
 # Save the plot as a figure
 plt.savefig('Top-2-countries_by_region.svg', bbox_inches='tight')
 
 plt.show()
 
-
-# In[22]:
-
-
-import matplotlib.pyplot as plt
-import pandas as pd
-import matplotlib.patches as patches
-
-# Assuming your DataFrame is named 'data' and it contains the reform data
-data = pd.read_excel('werd_v2.xlsx')
 
 # Filter data for Asian and European countries
 asian_countries = ['Afghanistan', 'China', 'India', 'Japan', 'South Korea', 'Pakistan', 'Bangladesh', 'Indonesia', 'Iran', 'Iraq', 'Turkey', 'Saudi Arabia', 'Vietnam', 'Philippines', 'Thailand']
