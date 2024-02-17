@@ -10,5 +10,5 @@ I have atteched the dataset for your convenience, however, it can still be readi
 Steps to get the article:
 
 1. Clone the repository in your local system
-2. Run the Generate_Plots file after downloading python
+2. Run the Generate_Plots.py file
 3. Run the Generate_Article.tex by running the file on the Overleaf website ( https://www.overleaf.com/project )
