@@ -1,6 +1,6 @@
 # Data-Visualisation-Project
 
-This is a project to create a data visualisation, which has to be inline with The Economist style guide,
+This is a project to create a data visualisation, which has to be inline with The Economist visual style guide, ( https://design-system.economist.com/documents/CHARTstyleguide_20170505.pdf )
 The same at first seems trivial but, can be a little challenging.
 
 Within the project, the data has been downloaded from the Website of World Education Reforms Database, made available by Stanfod University.
